@@ -40,7 +40,8 @@ GEM
     thor (0.20.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   appraisal
@@ -50,4 +51,4 @@ DEPENDENCIES
   rspec-retry!
 
 BUNDLED WITH
-   1.16.1
+   2.3.26
