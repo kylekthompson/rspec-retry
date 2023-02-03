@@ -66,9 +66,10 @@ describe RSpec::Retry do
     end
 
     context 'with :retry => 0' do
-      after(:all) { @@this_ran_once = nil }
+      after(:all) { class_variable_set(:@@this_ran_once, nil) }
+
       it 'should still run once', retry: 0 do
-        @@this_ran_once = true
+        class_variable_set(:@@this_ran_once, true)
       end
 
       it 'should run have run once' do
@@ -336,7 +337,7 @@ describe RSpec::Retry do
     let!(:example_group) do
       RSpec.describe do
         before :all do
-          @@results = {}
+          class_variable_set(:@@results, {})
         end
 
         around do |example|
